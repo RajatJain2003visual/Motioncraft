@@ -1,0 +1,390 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Flexbox container for controls and canvas */
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Controls container */
+.controls {
+    margin-top:2.5%;
+    /* transform: translateY(+0%); */
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Labels styling */
+.controls label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* Inputs styling */
+.controls input[type="text"], 
+.controls input[type="number"], 
+.controls input[type="file"], 
+.controls select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Range inputs */
+.controls input[type="range"] {
+    width: 100%;
+}
+
+.controls span {
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Buttons */
+.controls button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.controls button:hover {
+    background-color: #2980b9;
+}
+
+/* Color pickers */
+.controls input[type="color"] {
+    border: none;
+    padding: 5px;
+    width: 50px;
+    height: 40px;
+}
+
+/* Canvas styling */
+canvas {
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* width: 600px; */
+    /* height: 400px; */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .controls {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    canvas {
+        position: relative;
+        margin-left: 0;
+        width: 100%;
+        transform: none;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* Light Theme (Default) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.controls {
+    margin-top: 2.5%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.controls button {
+    background-color: #3498db;
+    color: #fff;
+}
+
+canvas {
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-theme .controls {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #444;
+}
+
+body.dark-theme .controls button {
+    background-color: #555;
+    color: #ddd;
+}
+
+body.dark-theme canvas {
+    border: 2px solid #f1f1f1;
+    box-shadow: 0 2px 15px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme .controls input, 
+body.dark-theme .controls select {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+body.dark-theme .controls input[type="color"] {
+    border: none;
+    padding: 5px;
+    width: 50px;
+    height: 40px;
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* Light Theme (Default) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.controls {
+    margin-top: 2.5%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Group Styling */
+.group {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.group + .group {
+    margin-top: 20px;
+}
+
+.group label {
+    margin-bottom: 5px;
+}
+
+.group input,
+.group select {
+    width: 100%;
+}
+
+.controls button {
+    background-color: #3498db;
+    color: #fff;
+    margin-top: 10px;
+}
+
+canvas {
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-60%);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-theme .controls {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #444;
+}
+
+body.dark-theme .controls button {
+    background-color: #555;
+    color: #ddd;
+}
+
+body.dark-theme canvas {
+    border: 2px solid #393939;
+    box-shadow: 0 1px 15px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme .controls input, 
+body.dark-theme .controls select {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+body.dark-theme .controls input[type="color"] {
+    border: none;
+    padding: 5px;
+    width: auto;
+    height: 40px;
+}
+
+/* Group Styling */
+body.dark-theme .group {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #444;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .group + .group {
+    margin-top: 20px;
+}
+
+body.dark-theme .group label {
+    margin-bottom: 5px;
+}
+
+body.dark-theme .group input,
+.group select {
+    width: 100%;
+}
+
+#textInput,#fontSize,#textShadowColorControl,#shadowOffsetXInput,#shadowOffsetYInput,#shadowBlurInput,#fontUpload{
+    width:auto;
+}
+
+#glowColor{
+    width: 100%;
+}
+/* fontSize */
+/* #fontSize{
+    width: auto;
+} */
+
+
+/* -------------------------------------------------------------------------------- */
+
+.buttons-container {
+    position: fixed;
+    /* right: 20px; */
+    left: 52vw;
+    top: calc(45% + 400px); /* Adjust this value based on the height of your canvas and button spacing */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buttons-container button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttons-container button:hover {
+    background-color: #2980b9;
+}
+
+.buttons-container button:active {
+    background-color: #1d6f9c;
+}
+
+.inputadjust{
+    width: 5px;
+}
+
+/* -------------------------------------------------------------------- */
+
+/* Applies pointer cursor to all interactive elements */
+button, a, input[type="button"], input[type="submit"], input[type="checkbox"], input[type="radio"], input[type="file"],input[type="range"], input[type="color"], #fontUpload,select {
+    cursor: pointer;
+}
+
+/* For custom clickable elements like divs or labels */
+.clickable, .controls label {
+    cursor: pointer;
+}
